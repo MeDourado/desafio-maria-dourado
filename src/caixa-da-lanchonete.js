@@ -5,7 +5,7 @@ class CaixaDaLanchonete {
         let valorTotalCompras = 0;
         let prato;
         const pedidos = [];
-        let nome = '';
+        let nomeItem = '';
         let quantidade = 0;
     
         function calcularCarrinho() {
@@ -46,10 +46,10 @@ class CaixaDaLanchonete {
     
         for (let item of itens) {
             const organizandoItens = item.split(',');
-            nome = organizandoItens[0];
+            nomeItem = organizandoItens[0];
             quantidade = organizandoItens[1];
             prato = cardapio.find((item) => {
-                if (item.codigo === nome) {
+                if (item.codigo === nomeItem) {
                     return item.valor;
                 }
             });

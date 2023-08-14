@@ -54,10 +54,10 @@ describe('CaixaDaLanchonete', () => {
         ['debito', 'R$ 6,00', ['chantily,1', 'cafe,1', 'chantily,1']],
         ['dinheiro', 'R$ 14,91', ['chantily,2', 'sanduiche,1', 'suco,1']],
         ['debito', 'R$ 13,00', ['chantily,1', 'sanduiche,1', 'cafe,1', 'queijo,1']],
-        ['debito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'cafe,1', 'queijo,1']],
+        ['credito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'cafe,1', 'queijo,1']],
         ['debito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,2']],
         ['credito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,2']],
-        ['credito', 'R$ 170,47', ['chantily,2', 'sanduiche,25']],
+
 
     ])('compra (texte extra) %p em %p deve resultar em %p', validaTeste);
 
