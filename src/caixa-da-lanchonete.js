@@ -82,5 +82,4 @@ class CaixaDaLanchonete {
         }
     }
 }
-
 export { CaixaDaLanchonete };
