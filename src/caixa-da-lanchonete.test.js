@@ -27,18 +27,6 @@ describe('CaixaDaLanchonete', () => {
         ['debito', 'R$ 11,50', ['cafe,1', 'sanduiche,1', 'queijo,1']],
     ])('compra de 3 itens em %p deve resultar em %p', validaTeste);
 
-    // MEUS PROPRIOS TESTES //
-    test.each([
-        ['debito', 'R$ 6,00', ['chantily,1', 'cafe,1', 'chantily,1']],
-        ['debito', 'R$ 15,70', ['chantily,2', 'sanduiche,1', 'suco,1']],
-        ['debito', 'R$ 13,00', ['chantily,1', 'sanduiche,1', 'cafe,1', 'queijo,1']],
-        ['debito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'cafe,1', 'queijo,1']],
-        ['debito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,2']],
-
-    ])('compra de 3 itens em %p deve resultar em %p', validaTeste);
-
-    // FIM DOS MEUS TESTES //
-
     test.each([
         ['dinheiro', 'R$ 33,73', ['cafe,4', 'sanduiche,3', 'queijo,2']],
         ['credito', 'R$ 36,56', ['cafe,4', 'sanduiche,3', 'queijo,2']],
@@ -60,4 +48,18 @@ describe('CaixaDaLanchonete', () => {
         ['queijo com outro item', 'debito', 'Item extra não pode ser pedido sem o principal', ['cafe,1', 'queijo,1']],
     ])('compra %p em %p deve resultar em %p', (_, formaDePagamento, resultadoEsperado, itens) =>
         validaTeste(formaDePagamento, resultadoEsperado, itens));
+
+     // MEUS PROPRIOS TESTES //
+     test.each([
+        ['debito', 'R$ 6,00', ['chantily,1', 'cafe,1', 'chantily,1']],
+        ['dinheiro', 'R$ 14,91', ['chantily,2', 'sanduiche,1', 'suco,1']],
+        ['debito', 'R$ 13,00', ['chantily,1', 'sanduiche,1', 'cafe,1', 'queijo,1']],
+        ['debito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'cafe,1', 'queijo,1']],
+        ['debito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,2']],
+        ['credito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,2']],
+        ['credito', 'R$ 170,47', ['chantily,2', 'sanduiche,25']],
+
+    ])('compra (texte extra) %p em %p deve resultar em %p', validaTeste);
+
+    // FIM DOS MEUS TESTES //
 });
